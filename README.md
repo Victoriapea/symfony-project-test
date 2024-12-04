@@ -10,7 +10,7 @@ Avant d'installer et d'exécuter l'API, vous devez avoir les outils suivants ins
 
 - **PHP** version 8.1 ou supérieure
 - **Composer** (outil de gestion de dépendances PHP)
-- **MySQL** ou **MariaDB** pour la base de données
+- **MySQL** pour la base de données
 - **Node.js** (si vous utilisez Webpack encore ou un autre outil frontend)
 
 ## Installation
