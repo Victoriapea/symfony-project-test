@@ -21,6 +21,12 @@ class CategoryController extends AbstractController
         ]);
     }
 
+    #[Route('/{id}', methods: ['GET'])]
+    public function show(Category $category): JsonResponse
+    {
+        return $this->json($category, 200, [], ['groups' => ['category']]);
+    }
+
     #[Route('', methods: ['POST'])]
     public function create(
         Request $request, 

@@ -22,6 +22,17 @@ class ProductController extends AbstractController
         ]);
     }
 
+    #[Route('/{id}', methods: ['GET'])]
+    public function show(int $id, EntityManagerInterface $em): JsonResponse
+    {
+        $product = $em->getRepository(Product::class)->find($id);
+        if (!$product) {
+            return $this->json(['error' => 'Produit non trouvé'], 404);
+        }
+        return $this->json($product, 200, [], ['groups' => ['product']]);
+    }
+
+
     #[Route('', methods: ['POST'])]
     public function create(
         Request $request, 
